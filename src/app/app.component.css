@@ -1,0 +1,10 @@
+:host {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.backgroundImageContainer {
+    background-image: url("../assets/clouds.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}

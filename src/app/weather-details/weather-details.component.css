@@ -1,0 +1,57 @@
+.locationSearchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 40px;
+}
+.locationSearchContainer > div:nth-child(1) {
+    height:max-content
+}
+.locationSearchContainer > div:nth-child(1) > input {
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid white;
+    height: 30px;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+}
+.locationSearchContainer > div:nth-child(2) {
+    padding: 20px 30px;
+    background-color: #E2560D;
+    cursor: pointer;
+}
+.locationSearchContainer > div:nth-child(2) > span {
+    font-size: 40px;
+}
+.cityListContainer {
+    border-bottom: 1px solid white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.cityListContainerItems {
+    padding-left: 40px;
+    padding: 10px 10px 10px 0px;
+    color: white;
+    cursor: pointer;
+}
+.weatherDetailsContainer {
+    border-bottom: 1px solid white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    color: white;
+}
+.moreDetailsContainer {
+  margin-top: 15px;
+}
+.moreDetailsContainer > div {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
