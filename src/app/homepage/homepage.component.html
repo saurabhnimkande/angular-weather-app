@@ -1,8 +1,10 @@
 <div [class]="'homepageMainContainer'">
-    <div>
-        <app-weather-display></app-weather-display>
-    </div>
-    <div>
-        <app-weather-details></app-weather-details>
-    </div>
+  <div>
+    <app-weather-display [weatherObject]="weatherObject"></app-weather-display>
+  </div>
+  <div>
+    <app-weather-details
+      (weatherDetailsEvent)="updateWeatherDetails($event)"
+    ></app-weather-details>
+  </div>
 </div>

@@ -1,32 +1,48 @@
 <div>
   <div [class]="'locationSearchContainer'">
-    <div><input type="text" placeholder="Another Location" [(ngModel)]="location"/></div>
+    <div>
+      <input
+        type="text"
+        placeholder="Another Location"
+        [(ngModel)]="location"
+      />
+    </div>
     <div (click)="handleApiCall()">
       <span class="material-symbols-outlined"> search </span>
     </div>
   </div>
   <div [class]="'cityListContainer'">
-    <div [class]="'cityListContainerItems'" *ngFor="let city of cityList">
-        {{city.name}}, {{city.state}}, {{city.country}}.
+    <div
+      [class]="'cityListContainerItems'"
+      *ngFor="let city of cityList"
+      (click)="getWeatherData(city?.lat, city?.lon)"
+    >
+      {{ city.name }}, {{ city.state }}, {{ city.country }}.
     </div>
   </div>
   <div [class]="'weatherDetailsContainer'">
-    <div>
-        Weather Details
-    </div>
+    <div>Weather Details</div>
     <div [class]="'moreDetailsContainer'">
-        <div>
-            <div>Cloudy</div>
-            <div>86%</div>
-        </div>
-        <div>
-            <div>Humidity</div>
-            <div>62%</div>
-        </div>
-        <div>
-            <div>Wind</div>
-            <div>8km/h</div>
-        </div>
+      <div>
+        <div>Cloudy</div>
+        <div>{{ weatherData?.clouds?.all }}%</div>
+      </div>
+      <div>
+        <div>Humidity</div>
+        <div>{{ weatherData?.main?.humidity }}%</div>
+      </div>
+      <div>
+        <div>Wind</div>
+        <div>{{ weatherData?.wind?.speed }} meter/sec</div>
+      </div>
+      <div>
+        <div>Visibility</div>
+        <div>{{ weatherData?.visibility / 1000 }} Km</div>
+      </div>
+      <div>
+        <div>Maximum Temperature</div>
+        <div>{{ (weatherData?.main?.temp_max - 273.15).toFixed(0) }}°</div>
+      </div>
     </div>
   </div>
 </div>

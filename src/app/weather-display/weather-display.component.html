@@ -1,16 +1,18 @@
 <div [class]="'weatherDisplayMainContainer'">
   <div>angular.weather</div>
   <div [class]="'weatherDisplayOuterContainer'">
-    <div [class]="'degreesContainer'"><div>16°</div></div>
+    <div [class]="'degreesContainer'">
+      <div>{{ (weatherObject?.main?.temp - 273.15).toFixed(0) }}°</div>
+    </div>
     <div [class]="'locationDateContainer'">
-      <div>London</div>
-      <div>06:09 - Monday,9 Sep '19</div>
+      <div>{{ weatherObject?.name }}</div>
+      <div>{{ date }}</div>
     </div>
     <div [class]="'weatherTypeDisplay'">
       <div>
         <span class="material-symbols-outlined"> cloudy </span>
       </div>
-      <div>Cloudy</div>
+      <div>{{weatherObject?.weather?.[0]?.description}}</div>
     </div>
   </div>
 </div>
